@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace bank
 {
@@ -84,9 +85,42 @@ namespace bank
                 case "business":
                     return "You have access to business features";
 
+                case "joint":
+                    return "You have access to joint acount features";
+
                 default:
                     return "invalid account";
             }
+        }
+    }
+
+    public class jointAccount : Account
+    {
+
+        List<Account> accHolders = new List<Account>();
+        public jointAccount(params Account[] args)
+        {
+            foreach (Account x in args)
+            {
+                accHolders.Add(x);
+            }
+
+        }
+
+        public override string getAccName()
+        {
+            string ret = "";
+
+            foreach (Account i in accHolders)
+            {
+                ret = ret + i.getAccName() + "\n";
+            }
+            return ret;
+        }
+
+        public override string accType()
+        {
+            return "joint";
         }
     }
 
@@ -103,6 +137,9 @@ namespace bank
             bussinessAccount a3 = new bussinessAccount("Maccas");
             Console.WriteLine(a3.getAccName());
             Console.WriteLine(accountPermissions.accountPerm(a3));
+            jointAccount a4 = new jointAccount(a2, a3);
+            Console.WriteLine(a4.accountNo);
+            Console.WriteLine(a4.getAccName());
         }
     }
 
