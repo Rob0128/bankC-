@@ -9,6 +9,8 @@ namespace bank
     }
     public abstract class Account
     {
+        public abstract String accType();
+
         public int accountNo;
 
         public Account()
@@ -18,11 +20,13 @@ namespace bank
         }
 
         public abstract string getAccName();
+
+
     }
 
     public class personalAccount : Account
     {
-        string accType = "personal";
+
         public string firstName;
         public string lastName;
 
@@ -36,6 +40,11 @@ namespace bank
         {
             string accName = firstName + " " + lastName;
             return accName;
+        }
+
+        public override string accType()
+        {
+            return "personal";
         }
     }
 
@@ -54,6 +63,31 @@ namespace bank
             return busName;
         }
 
+        public override string accType()
+        {
+            return "business";
+        }
+
+
+    }
+
+    public class accountPermissions
+    {
+
+        public static string accountPerm(Account x)
+        {
+            switch (x.accType())
+            {
+                case "personal":
+                    return "You have access to personal features";
+
+                case "business":
+                    return "You have access to business features";
+
+                default:
+                    return "invalid account";
+            }
+        }
     }
 
     public class initialiser
@@ -68,6 +102,7 @@ namespace bank
             Console.WriteLine(a2.getAccName());
             bussinessAccount a3 = new bussinessAccount("Maccas");
             Console.WriteLine(a3.getAccName());
+            Console.WriteLine(accountPermissions.accountPerm(a3));
         }
     }
 
