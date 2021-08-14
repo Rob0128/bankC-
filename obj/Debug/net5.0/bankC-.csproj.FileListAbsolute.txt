@@ -1,0 +1,16 @@
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.csproj.AssemblyReference.cache
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.AssemblyInfoInputs.cache
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.AssemblyInfo.cs
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.csproj.CoreCompileInputs.cache
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\bin\Debug\net5.0\bankC-.exe
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\bin\Debug\net5.0\bankC-.deps.json
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\bin\Debug\net5.0\bankC-.runtimeconfig.json
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\bin\Debug\net5.0\bankC-.runtimeconfig.dev.json
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\bin\Debug\net5.0\bankC-.dll
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\bin\Debug\net5.0\ref\bankC-.dll
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\bin\Debug\net5.0\bankC-.pdb
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.dll
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\ref\bankC-.dll
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.pdb
+C:\Users\rober\OneDrive\Documents\GitHub\bankC-\obj\Debug\net5.0\bankC-.genruntimeconfig.cache
