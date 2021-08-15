@@ -4,74 +4,7 @@ using System.Collections.Generic;
 namespace bank
 {
 
-    public static class Counter
-    {
-        public static int nextAccountNum = 1000;
-    }
-    public abstract class Account
-    {
-        public abstract String accType();
-
-        public int accountNo;
-
-        public Account()
-        {
-            accountNo = Counter.nextAccountNum;
-            Counter.nextAccountNum++;
-        }
-
-        public abstract string getAccName();
-
-
-    }
-
-    public class personalAccount : Account
-    {
-
-        public string firstName;
-        public string lastName;
-
-        public personalAccount(string fname, string lname)
-        {
-            firstName = fname;
-            lastName = lname;
-        }
-
-        public override string getAccName()
-        {
-            string accName = firstName + " " + lastName;
-            return accName;
-        }
-
-        public override string accType()
-        {
-            return "personal";
-        }
-    }
-
-    public class bussinessAccount : Account
-    {
-
-        public string busName;
-
-        public bussinessAccount(string name)
-        {
-            busName = name;
-        }
-
-        public override string getAccName()
-        {
-            return busName;
-        }
-
-        public override string accType()
-        {
-            return "business";
-        }
-
-
-    }
-
+    //Misc static functions
     public class accountPermissions
     {
 
@@ -94,35 +27,23 @@ namespace bank
         }
     }
 
-    public class jointAccount : Account
+    public class Checkers
     {
 
-        List<Account> accHolders = new List<Account>();
-        public jointAccount(params Account[] args)
+        public static bool checkPositive(int number)
         {
-            foreach (Account x in args)
+            if (number < 0)
             {
-                accHolders.Add(x);
+                return false;
+            }
+            else
+            {
+                return true;
             }
 
-        }
-
-        public override string getAccName()
-        {
-            string ret = "";
-
-            foreach (Account i in accHolders)
-            {
-                ret = ret + i.getAccName() + "\n";
-            }
-            return ret;
-        }
-
-        public override string accType()
-        {
-            return "joint";
         }
     }
+
 
     public class initialiser
     {
@@ -140,6 +61,13 @@ namespace bank
             jointAccount a4 = new jointAccount(a2, a3);
             Console.WriteLine(a4.accountNo);
             Console.WriteLine(a4.getAccName());
+            addMoneyToAccount.addMoney(a4, 400);
+            Console.WriteLine(a4.accountBalance);
+            Console.WriteLine(a1.accountBalance);
+            pay.paySomeOne(a4, a1, 200);
+            System.Console.WriteLine(a1.accountBalance);
+            System.Console.WriteLine(a4.accountBalance);
+
         }
     }
 
