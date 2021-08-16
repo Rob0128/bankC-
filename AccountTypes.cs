@@ -9,25 +9,76 @@ namespace bank
     {
         public abstract String accType();
 
-        public int accountNo;
+        private static int nextAccountNum = 1000;
+        private int? _accountNo;
 
-        public int accountBalance;
+        public int? accountNo { get { return _accountNo; } }
+
+        private int _accountBalance;
+        public int accountBalance { get { return _accountBalance; } }
+
+        public void deposit(int amount)
+        {
+            if (accountNo == null)
+            {
+                System.Console.WriteLine("Invalid account");
+            }
+            else
+            {
+                _accountBalance += amount;
+            }
+        }
+
+        public void withdraw(int amount)
+        {
+            if (accountNo == null)
+            {
+                System.Console.WriteLine("Invalid account");
+            }
+            else
+            {
+                if (_accountBalance >= amount)
+                {
+                    _accountBalance -= amount;
+                }
+                else
+                {
+                    System.Console.WriteLine("Not enough money");
+                }
+            }
+        }
 
         public Account()
         {
-            accountNo = Counter.nextAccountNum;
-            Counter.nextAccountNum++;
-            accountBalance = 0;
+            _accountNo = nextAccountNum;
+            nextAccountNum++;
+            _accountBalance = 0;
         }
 
         public abstract string getAccName();
 
+        public void deleteAccount(int accountNumber)
+        //Would usually delete from database but here will just nullify account no
+        {
+            if (accountNumber == this._accountNo)
+            {
+                if (this.accountBalance == 0)
+                {
+                    this._accountNo = null;
 
-    }
+                }
+                else
+                {
+                    Console.WriteLine("Balance must be 0");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Account number is incorrect");
+            }
+        }
 
-    public static class Counter
-    {
-        public static int nextAccountNum = 1000;
+
     }
 
     //Specific Accounts

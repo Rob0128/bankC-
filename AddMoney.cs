@@ -1,24 +1,24 @@
-using System;
-using System.Collections.Generic;
+// using System;
+// using System.Collections.Generic;
 
-namespace bank
-{
+// namespace bank
+// {
 
-    public class addMoneyToAccount
-    {
+//     public class addMoneyToAccount
+//     {
 
-        public static void addMoney(Account account, int amount)
-        {
-            if (Checkers.checkPositive(amount))
-            {
-                account.accountBalance += amount;
-            }
-            else
-            {
-                Console.WriteLine("Must be a positive amount");
-            }
-        }
+//         public static void addMoney(Account account, int amount)
+//         {
+//             if (Checkers.checkPositive(amount))
+//             {
+//                 account.accountBalance += amount;
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Must be a positive amount");
+//             }
+//         }
 
-    }
+//     }
 
-}
+// }

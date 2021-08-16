@@ -7,21 +7,29 @@ namespace bank
     {
         static public void paySomeOne(Account a1, Account a2, int amount)
         {
-            if (Checkers.checkPositive(amount))
+            //check payee is valid 
+            if (a2.accountNo == null)
             {
-                if (a1.accountBalance >= amount)
-                {
-                    a1.accountBalance -= amount;
-                    a2.accountBalance += amount;
-                }
-                else
-                {
-                    Console.WriteLine("Insuficcient funds");
-                }
+                System.Console.WriteLine("Invalid payee account");
             }
             else
             {
-                Console.WriteLine("Needs to be a positive amount");
+                if (Checkers.checkPositive(amount))
+                {
+                    if (a1.accountBalance >= amount)
+                    {
+                        a1.withdraw(amount);
+                        a2.deposit(amount);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Insuficcient funds");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Needs to be a positive amount");
+                }
             }
         }
     }

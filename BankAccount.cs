@@ -61,13 +61,16 @@ namespace bank
             jointAccount a4 = new jointAccount(a2, a3);
             Console.WriteLine(a4.accountNo);
             Console.WriteLine(a4.getAccName());
-            addMoneyToAccount.addMoney(a4, 400);
+            a4.deposit(400);
             Console.WriteLine(a4.accountBalance);
             Console.WriteLine(a1.accountBalance);
-            pay.paySomeOne(a4, a1, 200);
+            pay.paySomeOne(a4, a1, 400);
             System.Console.WriteLine(a1.accountBalance);
             System.Console.WriteLine(a4.accountBalance);
-
+            a4.deleteAccount(1003);
+            System.Console.WriteLine(a4.accountBalance);
+            Console.WriteLine(a4.accountNo);
+            pay.paySomeOne(a1, a3, 400);
         }
     }
 
